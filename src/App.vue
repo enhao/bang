@@ -1,7 +1,26 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <div class="container-full">
+    <b-navbar toggleable type="inverse" variant="info" sticky>
+      <b-nav-toggle target="nav_collapse"></b-nav-toggle>
+
+      <b-link class="navbar-brand" to="#">
+        <span>Bang!</span>
+      </b-link>
+
+      <b-collapse is-nav id="nav_collapse">
+        <b-nav is-nav-bar>
+          <b-nav-item-dropdown text="遊戲牌" right disabled>
+          <b-dropdown-item>全部</b-dropdown-item>
+          <b-dropdown-item>藍邊牌</b-dropdown-item>
+          <b-dropdown-item>棕邊牌</b-dropdown-item>
+          <b-dropdown-item>綠邊牌</b-dropdown-item>
+        </b-nav-item-dropdown>
+        </b-nav>
+      </b-collapse>
+    </b-navbar>
     <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -14,13 +33,4 @@ export default {
 <style>
 @import '~bootstrap/dist/css/bootstrap.css';
 @import '~bootstrap-vue/dist/bootstrap-vue.css';
-
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
